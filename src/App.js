@@ -1,4 +1,4 @@
-import { ThemeProvider, useTheme } from "./Context/Theme"; // ✅ Fixed import path
+import { ThemeProvider, useTheme } from "./Context/Theme"; 
 import Toggler from './Component/Toggler';
 
 const AppContent = () => {
