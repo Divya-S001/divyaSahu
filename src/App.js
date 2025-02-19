@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { fetchStudentsRequest } from './redux/action';
+// import { addtoCart } from './redux/action';
+// import {useDispatch} from 'react-redux'
 
 function App() {
+const dispatch = useDispatch();
+const {students, loading,error} = useSelector((state)=> state.students)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <h2>Student List</h2>
+<button onClick={()=> dispatch(fetchStudentsRequest())}>Fetch Students Data</button>
+{loading && <p>Loading...</p>}
+{error && <p>Error: {error}</p>}
+<ul>  
+  {students.map((students)=>(
+    <li key={students.id}> {students.name}-{students.email}</li>
+  
+  ))}
+  
+  </ul>
+
     </div>
   );
 }
