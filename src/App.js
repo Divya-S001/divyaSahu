@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import "./globle/styles.css"
+// import RewardsSection from './components/box';
+// import Header from './components/header';
+// import RewardBox1 from './components/rewardbox';
+// import Sidebar from './components/sidebar';
+// import KeySection from './components/keysection';
+import RewardsPage from './pages/page';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <RewardsPage/>
     </div>
   );
 }
